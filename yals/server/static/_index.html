@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Yet another URL Shortener</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <h1><span>Yet Another<br>Link Shortener</span></h1>
+        </div>
+        <div class="item">
+            <fieldset>
+                <input type="url" id="url" class="input"><button onclick="postURL()" class="btn">Get the
+                    shortcut</button>
+            </fieldset>
+        </div>
+        <div class="item result hidden" id="result">
+        </div>
+    </div>
+</body>
+
+<script>
+    function postURL() {
+        let url = document.querySelector('#url').value
+        console.log(url);
+        let endpoint = "/add"
+        fetch(endpoint, {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ url: url })
+        }).then(res => res.json())
+            .then(res => {
+                if (!res.error) {
+                    let resultDiv = document.getElementById("result");
+                    resultDiv.innerHTML = `
+                    <p><a target="_blank" href="http://localhost:8080/go/${res.shortcut}">http://localhost:8080/go/${res.shortcut}</a></p>
+                `
+                    resultDiv.classList.remove("hidden")
+                }
+            });
+    }
+</script>
+
+</html>

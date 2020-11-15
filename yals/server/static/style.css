@@ -1,0 +1,81 @@
+.wrapper, html, body {
+    height: 100%;
+    background-image: url('/static/texture.png');
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    height: 85%;
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+h1 {
+    color: white;
+    font-size: 3em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 span {
+    background-color: black;
+}
+
+label, input, button {
+    font-size: inherit;
+    padding: 0px;
+    margin: 0px;
+    /* the following ensures they're all using the same box-model for rendering */
+    -moz-box-sizing: content-box; /* or `border-box` */
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+fieldset {
+    height: 40px;
+    border-radius: 7px;
+    font-size: 1.2em;
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+    -webkit-box-shadow: 30px 30px 54px -15px rgba(0,0,0,0.5);
+    -moz-box-shadow: 30px 30px 54px -15px rgba(0,0,0,0.5);
+    box-shadow: 30px 30px 54px -15px rgba(0,0,0,0.5);
+}
+
+.result {
+    margin: 15px;
+    padding: 20px 80px;
+    background-color: snow;
+    border-radius: 15px;
+    border: 1px solid lightgray;
+    -webkit-box-shadow: 30px 30px 54px -15px rgba(0,0,0,0.5);
+    -moz-box-shadow: 30px 30px 54px -15px rgba(0,0,0,0.5);
+    box-shadow: 30px 30px 54px -15px rgba(0,0,0,0.5);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.result a {
+    color: salmon;
+    font-size: large;
+}
+.input {
+    height: 100%;
+    border-radius: 7px 0px 0px 7px;
+    border-width: 0px;
+}
+
+.btn {
+    height: 100%;
+    background-color:lightsalmon;
+    width: 8em;
+    border-radius: 0px 7px 7px 0px;
+    border-width: 0px;
+}
+
+.hidden {
+    visibility: hidden;
+}
