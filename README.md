@@ -1,2 +1,2 @@
-# yals
+# YALS Project
 YetAnotherLinkShortener
